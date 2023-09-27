@@ -71,6 +71,10 @@ impl Vector {
     pub fn to_vec(self) -> Vec<Edn> {
         self.0
     }
+
+    pub fn inner(&self) -> &Vec<Edn> {
+        &self.0
+    }
 }
 
 #[cfg(feature = "async")]
@@ -104,6 +108,10 @@ impl List {
     #[must_use]
     pub fn to_vec(self) -> Vec<Edn> {
         self.0
+    }
+
+    pub fn inner(&self) -> &Vec<Edn> {
+        &self.0
     }
 }
 
@@ -139,6 +147,10 @@ impl Set {
     pub fn to_set(self) -> BTreeSet<Edn> {
         self.0
     }
+
+    pub fn inner(&self) -> &BTreeSet<Edn> {
+        &self.0
+    }
 }
 
 #[cfg(feature = "async")]
@@ -172,6 +184,10 @@ impl Map {
     #[must_use]
     pub fn to_map(self) -> BTreeMap<String, Edn> {
         self.0
+    }
+
+    pub fn inner(&self) -> &BTreeMap<String, Edn> {
+        &self.0
     }
 }
 
